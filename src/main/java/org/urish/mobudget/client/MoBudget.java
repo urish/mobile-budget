@@ -19,12 +19,12 @@ public class MoBudget extends GwtTitaniumBootstrap {
 		tabGroup.setBarColor("#006800");
 
 		Tab tab1 = UI.createTab();
-		tab1.setTitle("רס\"ר");
+		tab1.setTitle("תקציב 2012");
 		tab1.setWindow(new BudgetViewScreen().getView());
 		tabGroup.addTab(tab1);
 
 		Tab tab2 = UI.createTab();
-		tab2.setTitle("דרגות");
+		tab2.setTitle("תקציב 2012");
 		tab2.setWindow(new BudgetViewScreen().getView());
 		tabGroup.addTab(tab2);
 

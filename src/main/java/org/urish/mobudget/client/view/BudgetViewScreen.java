@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.urish.gwtit.client.font.Font;
-import org.urish.gwtit.titanium.API;
 import org.urish.gwtit.titanium.UI;
 import org.urish.gwtit.titanium.ui.AlertDialog;
 import org.urish.gwtit.titanium.ui.Label;
@@ -101,9 +100,8 @@ public class BudgetViewScreen {
 			@Override
 			public void onClick(ClickEvent event) {
 				BudgetLine selectedLine = filtered.get(getIndex(event));
-				String selectedCode = selectedLine.getCode();
-				if (selectedCode.length() < 8) {
-					MoBudget.tabGroup.getActiveTab().open(new BudgetSubScreen(selectedCode).getView());
+				if (selectedLine.getCode().length() < 8) {
+					MoBudget.tabGroup.getActiveTab().open(new BudgetSubScreen(selectedLine).getView());
 				} else {
 					AlertDialog alertDialog = UI.createAlertDialog();
 					alertDialog.setTitle(selectedLine.getTitle());
@@ -119,6 +117,10 @@ public class BudgetViewScreen {
 			populateView();
 			populated = true;
 		}
+		return view;
+	}
+	
+	protected Window getWindow() {
 		return view;
 	}
 

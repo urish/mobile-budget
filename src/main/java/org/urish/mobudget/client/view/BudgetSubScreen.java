@@ -8,9 +8,10 @@ import org.urish.mobudget.client.model.BudgetLine;
 public class BudgetSubScreen extends BudgetViewScreen {
 	final String parentCode;
 
-	public BudgetSubScreen(String parentCode) {
+	public BudgetSubScreen(BudgetLine budgetLine) {
 		super();
-		this.parentCode = parentCode;
+		this.parentCode = budgetLine.getCode();
+		getWindow().setTitle(budgetLine.getTitle());
 	}
 
 	@Override
