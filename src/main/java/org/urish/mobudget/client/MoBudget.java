@@ -22,20 +22,12 @@ public class MoBudget extends GwtTitaniumBootstrap {
 		Tab tab1 = UI.createTab();
 		tab1.setTitle("רס\"ר");
 		tab1.setWindow(new BudgetViewScreen().getView());
-		tab1.setIcon("icons/beret.png");
 		tabGroup.addTab(tab1);
 
 		Tab tab2 = UI.createTab();
 		tab2.setTitle("דרגות");
 		tab2.setWindow(new BudgetViewScreen().getView());
-		tab2.setIcon("icons/ranks.png");
 		tabGroup.addTab(tab2);
-
-		Tab tab3 = UI.createTab();
-		tab3.setTitle("עוד...");
-		tab3.setWindow(new BudgetViewScreen().getView());
-		tab3.setIcon("icons/more.png");
-		tabGroup.addTab(tab3);
 
 		tabGroup.open();
 	}

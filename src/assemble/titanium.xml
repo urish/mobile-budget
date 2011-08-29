@@ -39,7 +39,7 @@
 	</fileSets>
 	<files>
 		<file>
-			<source>${project.build.directory}/${project.artifactId}-${project.version}/${project.artifactId}/${project.artifactId}.js</source>
+			<source>${project.build.directory}/${project.artifactId}-${project.version}/${iphonejava.module}/${iphonejava.module}.js</source>
 			<outputDirectory>/Resources</outputDirectory>
 			<destName>app.js</destName>
 		</file>
