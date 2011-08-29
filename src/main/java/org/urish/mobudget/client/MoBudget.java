@@ -10,12 +10,11 @@ import org.urish.mobudget.client.view.BudgetViewScreen;
 
 public class MoBudget extends GwtTitaniumBootstrap {
 	private final static Logger logger = LoggerFactory.get(MoBudget.class);
+	public final static TabGroup tabGroup = UI.createTabGroup();
 
 	@Override
 	public void main() {
 		logger.info("Creating UI...");
-		
-		TabGroup tabGroup = UI.createTabGroup();
 
 		tabGroup.setBarColor("#006800");
 
