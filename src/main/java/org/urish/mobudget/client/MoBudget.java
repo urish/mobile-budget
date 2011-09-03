@@ -6,6 +6,7 @@ import org.urish.gwtit.titanium.ui.Tab;
 import org.urish.gwtit.titanium.ui.TabGroup;
 import org.urish.mobudget.client.logger.Logger;
 import org.urish.mobudget.client.logger.LoggerFactory;
+import org.urish.mobudget.client.view.AboutScreen;
 import org.urish.mobudget.client.view.BudgetViewScreen;
 import org.urish.mobudget.client.view.SearchScreen;
 
@@ -31,8 +32,8 @@ public class MoBudget extends GwtTitaniumBootstrap {
 
 		Tab tab3 = UI.createTab();
 		tab3.setTitle("אודות");
-		tab3.setWindow(new SearchScreen().getView());
-		tabGroup.addTab(tab2);
+		tab3.setWindow(new AboutScreen().getView());
+		tabGroup.addTab(tab3);
 
 		tabGroup.open();
 	}
