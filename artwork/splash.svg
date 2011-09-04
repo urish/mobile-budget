@@ -14,7 +14,10 @@
    id="svg4921"
    version="1.1"
    inkscape:version="0.48.1 "
-   sodipodi:docname="splash.svg">
+   sodipodi:docname="splash.svg"
+   inkscape:export-filename="C:\Projects\mobile-budget\src\main\resources\iphone\Default.png"
+   inkscape:export-xdpi="45"
+   inkscape:export-ydpi="45">
   <defs
      id="defs4923" />
   <sodipodi:namedview
@@ -24,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="145.35142"
-     inkscape:cy="282.46131"
+     inkscape:zoom="0.7"
+     inkscape:cx="274.69508"
+     inkscape:cy="449.56842"
      inkscape:document-units="px"
      inkscape:current-layer="g4981"
      showgrid="false"
@@ -43,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -55,8 +58,15 @@
     <g
        id="g4981"
        transform="translate(96.974646,-22.223356)">
+      <rect
+         style="opacity:0.50000000000000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="rect3004"
+         width="1062.8572"
+         height="1108.5714"
+         x="-311.26038"
+         y="57.442657" />
       <path
-         style="fill:#fefefc;fill-opacity:1"
+         style="fill:#1401cc;fill-opacity:1"
          d="m 271.38547,1040.9693 c 12.68806,-1.085 13.485,-1.1707 21.87923,-2.4844 10.61141,-4.1442 47.60928,-2.9801 39.79015,-14.8166 -0.87649,-1.3397 -2.23722,-2.3603 -3.87792,-3.1503 -7.85552,-3.7825 -22.12901,-2.2777 -20.39954,-5.1909 6.33725,-3.0708 9.57033,-4.8127 17.93231,-2.4954 15.16861,4.94 22.34044,13.6537 8.67152,21.5744 -18.0688,7.2018 -41.07799,8.3735 -61.99002,8.714 -4.93834,3.0139 -72.64174,4.7519 -75.9214,2.6429 -3.27966,-2.109 27.08696,-0.6103 28.4874,-0.7124 1.40043,-0.1023 32.74023,-2.9964 45.42827,-4.0813 z m -154.6639,2.4331 c -11.26836,-4.5475 -35.502163,-4.2198 -42.303663,-15.6671 -4.921236,-8.4807 12.800294,-13.9323 36.201113,-16.5041 0.79372,5.7487 -24.057987,5.7223 -25.015326,11.7429 -1.682911,10.5838 17.308246,12.192 26.532496,14.8212 27.96748,5.0631 87.35829,6.5489 89.86305,8.0359 2.50476,1.487 10.35221,1.1687 -52.41189,-0.3912 -13.93053,-0.3462 -30.8479,-1.6355 -32.86578,-2.0376 z"
          id="path3912"
          inkscape:connector-curvature="0"
