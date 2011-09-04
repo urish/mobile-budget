@@ -8,7 +8,7 @@
 		<target device="blackberry">false</target>
 	</deployment-targets>
 	<id>org.urish.mobudget</id>
-	<name>Mobile Budget</name>
+	<name>mobile-budget</name>
 	<version>1.0</version>
 	<publisher>Uri Shaked</publisher>
 	<url>http://www.urish.org/</url>
