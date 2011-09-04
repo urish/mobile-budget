@@ -13,8 +13,8 @@ public interface Factory extends AutoBeanFactory {
 	public AutoBean<CommentInfo> makeCommentInfo();
 
 	public AutoBean<CommentList> makeCommentList();
-
+/*
 	public AutoBean<CommentSummary> makeCommentSummary();
 
-	public AutoBean<CommentSummaryList> makeCommentSummaryList();
+	public AutoBean<CommentSummaryList> makeCommentSummaryList();*/
 }

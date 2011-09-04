@@ -1,5 +1,6 @@
 package org.urish.mobudget.client.net;
 
+import org.urish.gwtit.client.util.Javascript;
 import org.urish.gwtit.titanium.Filesystem;
 import org.urish.mobudget.client.logger.Logger;
 import org.urish.mobudget.client.logger.LoggerFactory;
@@ -14,15 +15,10 @@ public class UpdaterSaveToFile implements UpdaterCallback {
 		this(fileName, null);
 	}
 
-	private static native String unescape(String what)
-	/*-{
-	 	return unescape(what);
-	}-*/;
-
 	public UpdaterSaveToFile(String fileName, UpdaterCallback nextCallback) {
 		super();
 		if (fileName.indexOf("file://") == 0) {
-			this.fileName = unescape(fileName.replaceAll("^file://[^/]*", ""));
+			this.fileName = Javascript.unescape(fileName.replaceAll("^file://[^/]*", ""));
 		} else {
 			this.fileName = fileName;
 		}

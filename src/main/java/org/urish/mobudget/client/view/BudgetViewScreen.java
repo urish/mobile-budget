@@ -8,9 +8,6 @@ import org.urish.gwtit.titanium.ui.TableView;
 import org.urish.gwtit.titanium.ui.TableViewRow;
 import org.urish.gwtit.titanium.ui.View;
 import org.urish.gwtit.titanium.ui.Window;
-import org.urish.gwtit.titanium.ui.events.RowClickEvent;
-import org.urish.gwtit.titanium.ui.events.RowClickHandler;
-import org.urish.mobudget.client.MoBudget;
 import org.urish.mobudget.client.logger.Logger;
 import org.urish.mobudget.client.logger.LoggerFactory;
 import org.urish.mobudget.client.model.BudgetLine;
@@ -58,22 +55,8 @@ public class BudgetViewScreen extends BaseBudgetView {
 		for (BudgetLine budgetLine : filtered) {
 			tableView.appendRow(createBudgetRow(budgetLine, getTotal()));
 		}
-		final boolean hadPrincipal = principalRow != null;
 
-		tableView.addRowClickHandler(new RowClickHandler() {
-
-			@Override
-			public void onRowClick(RowClickEvent event) {
-				int index = (int) event.getIndex();
-				if (hadPrincipal) {
-					index--;
-				}
-				if (index >= 0) {
-					BudgetLine selectedLine = filtered.get(index);
-					MoBudget.tabGroup.getActiveTab().open(new BudgetSubScreen(selectedLine).getView());
-				}
-			}
-		});
+		tableView.addRowClickHandler(this);
 	}
 
 	public View getView() {
