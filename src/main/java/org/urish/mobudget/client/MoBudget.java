@@ -8,7 +8,6 @@ import org.urish.mobudget.client.logger.Logger;
 import org.urish.mobudget.client.logger.LoggerFactory;
 import org.urish.mobudget.client.view.AboutScreen;
 import org.urish.mobudget.client.view.BudgetViewScreen;
-import org.urish.mobudget.client.view.SearchScreen;
 
 public class MoBudget extends GwtTitaniumBootstrap {
 	private final static Logger logger = LoggerFactory.get(MoBudget.class);
@@ -25,10 +24,13 @@ public class MoBudget extends GwtTitaniumBootstrap {
 		tab1.setWindow(new BudgetViewScreen().getView());
 		tabGroup.addTab(tab1);
 
-		Tab tab2 = UI.createTab();
-		tab2.setTitle("חיפוש סעיפים");
-		tab2.setWindow(new SearchScreen().getView());
-		tabGroup.addTab(tab2);
+		// The search option is not very stable at the moment, so we disable
+		// it...
+
+		// Tab tab2 = UI.createTab();
+		// tab2.setTitle("חיפוש סעיפים");
+		// tab2.setWindow(new SearchScreen().getView());
+		// tabGroup.addTab(tab2);
 
 		Tab tab3 = UI.createTab();
 		tab3.setTitle("אודות");
