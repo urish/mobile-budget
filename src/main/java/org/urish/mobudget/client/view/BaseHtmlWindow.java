@@ -11,22 +11,22 @@ public abstract class BaseHtmlWindow {
 
 	public BaseHtmlWindow(String url) {
 		window = UI.createWindow();
-		window.setOrientationModes(new int[]{UI.PORTRAIT, UI.LANDSCAPE_LEFT, UI.LANDSCAPE_RIGHT});
-		
+		window.setOrientationModes(new int[] { UI.PORTRAIT, UI.LANDSCAPE_LEFT, UI.LANDSCAPE_RIGHT });
+
 		WebView webView = UI.createWebView();
 		webView.setBackgroundColor("black");
 		webView.setUrl(htmlResourceUrl(url));
 		window.add(webView);
 	}
-	
+
 	private String htmlResourceUrl(String relativePath) {
 		if (Version.android()) {
-			return Filesystem.getFile(Filesystem.getResourcesDirectory() + relativePath).getNativePath(); 			
+			return Filesystem.getFile(Filesystem.getResourcesDirectory() + relativePath).getNativePath();
 		} else {
 			return Filesystem.getResourcesDirectory() + relativePath;
 		}
 	}
-	
+
 	public Window getWindow() {
 		return window;
 	}

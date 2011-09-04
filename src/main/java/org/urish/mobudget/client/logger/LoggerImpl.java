@@ -4,13 +4,13 @@ import org.urish.gwtit.titanium.API;
 
 class LoggerImpl implements Logger {
 	private final String name;
-	
+
 	public LoggerImpl(String name) {
 		this.name = name;
 	}
 
 	protected String decorate(String message) {
-		return  "[" + name + "] " + message;
+		return "[" + name + "] " + message;
 	}
 
 	@Override

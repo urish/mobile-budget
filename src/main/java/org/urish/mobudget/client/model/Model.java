@@ -21,7 +21,7 @@ public class Model {
 		String jsonData = Filesystem.getFile(Filesystem.getResourcesDirectory() + filename).read().toString_();
 		return AutoBeanCodex.decode(factory, clazz, jsonData).as();
 	}
-	
+
 	public static <T> T loadJson(String filename, Class<T> clazz) {
 		File jsonFile = getJsonWriteFile(filename);
 		if (!jsonFile.exists()) {
@@ -31,13 +31,12 @@ public class Model {
 		String jsonData = jsonFile.read().toString_();
 		return AutoBeanCodex.decode(factory, clazz, jsonData).as();
 	}
-	
+
 	public static <T> T loadJsonString(String jsonData, Class<T> clazz) {
-		return AutoBeanCodex.decode(factory, clazz, jsonData).as();		
+		return AutoBeanCodex.decode(factory, clazz, jsonData).as();
 	}
 
 	public static String getJsonWritePath(String filename) {
 		return Filesystem.getApplicationDataDirectory() + filename;
 	}
-
 }

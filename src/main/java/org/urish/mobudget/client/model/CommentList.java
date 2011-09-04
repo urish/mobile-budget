@@ -4,5 +4,6 @@ import java.util.List;
 
 public interface CommentList {
 	GenerationData getGeneration();
+
 	List<CommentInfo> getItems();
 }

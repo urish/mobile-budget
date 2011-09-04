@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface BudgetDatabase {
 	List<BudgetLine> getData();
-	
+
 	int getTotalBudget();
 }

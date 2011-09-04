@@ -16,7 +16,7 @@ import org.urish.mobudget.client.model.Model;
 
 public class BaseBudgetView {
 	private final static Logger logger = LoggerFactory.get(BaseBudgetView.class);
-	
+
 	private static final BudgetDatabase budgetDatabase = Model.loadStaticJson("data/2012.json", BudgetDatabase.class);
 
 	protected void sortBudget(List<BudgetLine> budget) {
@@ -69,7 +69,7 @@ public class BaseBudgetView {
 		amountTitle.setColor("gray");
 		amountTitle.setTop(28);
 		result.add(amountTitle);
-		
+
 		addSearchText(result, budgetLine.getTitle());
 
 		return result;

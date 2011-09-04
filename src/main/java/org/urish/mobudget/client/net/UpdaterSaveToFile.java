@@ -13,7 +13,7 @@ public class UpdaterSaveToFile implements UpdaterCallback {
 	public UpdaterSaveToFile(String fileName) {
 		this(fileName, null);
 	}
-	
+
 	private static native String unescape(String what)
 	/*-{
 	 	return unescape(what);
