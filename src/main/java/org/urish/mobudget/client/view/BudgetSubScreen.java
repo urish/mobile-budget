@@ -3,6 +3,8 @@ package org.urish.mobudget.client.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.urish.gwtit.client.font.Font;
+import org.urish.gwtit.client.font.FontWeight;
 import org.urish.gwtit.titanium.UI;
 import org.urish.gwtit.titanium.ui.Label;
 import org.urish.gwtit.titanium.ui.TableViewRow;
@@ -22,15 +24,29 @@ public class BudgetSubScreen extends BudgetViewScreen {
 	@Override
 	protected TableViewRow getPrincipalRow() {
 		TableViewRow result = UI.createTableViewRow();
-		
+
 		result.setHeight("auto");
 		result.setLayout("vertical");
-		
+
+		String code = "";
+		if (budgetLine.getCode().length() >= 4) {
+			code = budgetLine.getCode().substring(0, 4).replaceAll("^0+", "");
+		}
+		if (budgetLine.getCode().length() >= 6) {
+			code += "." + budgetLine.getCode().substring(4, 6).replaceAll("^0+", "");
+		}
+		if (budgetLine.getCode().length() >= 8) {
+			code += "." + budgetLine.getCode().substring(6, 8).replaceAll("^0+", "");
+		}
+
 		Label topLabel = UI.createLabel();
 		topLabel.setWidth(320);
 		topLabel.setHeight("auto");
-		topLabel.setText(budgetLine.getTitle());
+		topLabel.setText(code + ". " + budgetLine.getTitle());
+		topLabel.setFont(Font.createFont(12, FontWeight.BOLD));
 		topLabel.setTextAlign(UI.TEXT_ALIGNMENT_CENTER);
+		topLabel.setTop(4);
+		topLabel.setBottom(4);
 		result.add(topLabel);
 
 		Label amountLabel = UI.createLabel();
@@ -38,17 +54,17 @@ public class BudgetSubScreen extends BudgetViewScreen {
 		amountLabel.setText(getAmountText(budgetLine.getNet_allocated()) + " " + Strings.NIS);
 		amountLabel.setTextAlign(UI.TEXT_ALIGNMENT_RIGHT);
 		result.add(amountLabel);
-		
+
 		int totalBudget = getBudgetDatabase().getTotalBudget();
 		String percent = String.valueOf((10000 * budgetLine.getNet_allocated() / totalBudget) / 100.0);
-		if (!percent.equals("0")) {			
+		if (!percent.equals("0")) {
 			Label percentLabel = UI.createLabel();
 			percentLabel.setHeight("auto");
 			percentLabel.setText(percent + " " + Strings.PERCENT_OF_STATE_BUDGET);
 			percentLabel.setTextAlign(UI.TEXT_ALIGNMENT_RIGHT);
 			result.add(percentLabel);
 		}
-		
+
 		return result;
 	}
 
