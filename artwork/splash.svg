@@ -15,9 +15,9 @@
    version="1.1"
    inkscape:version="0.48.1 "
    sodipodi:docname="splash.svg"
-   inkscape:export-filename="C:\Projects\mobile-budget\src\main\resources\iphone\Default.png"
-   inkscape:export-xdpi="45"
-   inkscape:export-ydpi="45">
+   inkscape:export-filename="C:\Projects\mobile-budget\src\main\resources\iphone\Default@2x.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4923" />
   <sodipodi:namedview
@@ -59,7 +59,7 @@
        id="g4981"
        transform="translate(96.974646,-22.223356)">
       <rect
-         style="opacity:0.50000000000000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="rect3004"
          width="1062.8572"
          height="1108.5714"
