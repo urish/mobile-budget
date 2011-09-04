@@ -7,4 +7,5 @@ public class Strings {
 
 	public final static String NIS = "ש\"ח";
 	public static final String PERCENT_OF_STATE_BUDGET = "אחוזים מתקציב המדינה ";
+	public static final String COMMENTS = "תגובות";
 }

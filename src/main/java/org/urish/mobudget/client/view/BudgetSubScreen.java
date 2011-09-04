@@ -5,14 +5,17 @@ import java.util.List;
 
 import org.urish.gwtit.client.font.Font;
 import org.urish.gwtit.client.font.FontWeight;
+import org.urish.gwtit.client.util.Javascript;
 import org.urish.gwtit.titanium.UI;
 import org.urish.gwtit.titanium.ui.Label;
 import org.urish.gwtit.titanium.ui.TableViewRow;
+import org.urish.gwtit.titanium.ui.events.RowClickEvent;
 import org.urish.mobudget.client.model.BudgetLine;
 
 public class BudgetSubScreen extends BudgetViewScreen {
 	final String parentCode;
 	final BudgetLine budgetLine;
+	private TableViewRow commentsRow;
 
 	public BudgetSubScreen(BudgetLine budgetLine) {
 		super();
@@ -21,10 +24,10 @@ public class BudgetSubScreen extends BudgetViewScreen {
 		getWindow().setTitle(budgetLine.getTitle());
 	}
 
-	@Override
-	protected TableViewRow getPrincipalRow() {
+	private TableViewRow createHeaderRow() {
 		TableViewRow result = UI.createTableViewRow();
 
+		result.setSelectedBackgroundColor("white");
 		result.setHeight("auto");
 		result.setLayout("vertical");
 
@@ -66,6 +69,32 @@ public class BudgetSubScreen extends BudgetViewScreen {
 		}
 
 		return result;
+	}
+	
+	private TableViewRow createCommentsRow() {
+		TableViewRow result = UI.createTableViewRow();
+
+		result.setHasChild(true);
+		result.setTitle("5 " + Strings.COMMENTS);
+
+		return result;
+	}
+
+	
+	@Override
+	protected void populateView() {
+		getTableView().appendRow(createHeaderRow());
+		commentsRow = createCommentsRow();
+		getTableView().appendRow(commentsRow);
+		super.populateView();
+	}
+	
+	@Override
+	public void onRowClick(RowClickEvent event) {
+		if (event.getRow().equals(commentsRow)) {
+			Javascript.alert("Should show comments view...");
+		}
+		super.onRowClick(event);
 	}
 
 	private String getAmountText(int amount) {

@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.urish.gwtit.titanium.UI;
 import org.urish.gwtit.titanium.ui.TableView;
-import org.urish.gwtit.titanium.ui.TableViewRow;
 import org.urish.gwtit.titanium.ui.View;
 import org.urish.gwtit.titanium.ui.Window;
 import org.urish.mobudget.client.logger.Logger;
@@ -28,10 +27,6 @@ public class BudgetViewScreen extends BaseBudgetView {
 		view.add(tableView);
 	}
 
-	protected TableViewRow getPrincipalRow() {
-		return null;
-	}
-
 	protected List<BudgetLine> filterBudget() {
 		int total = 0;
 		final List<BudgetLine> filtered = new ArrayList<BudgetLine>();
@@ -45,13 +40,9 @@ public class BudgetViewScreen extends BaseBudgetView {
 		return filtered;
 	}
 
-	private void populateView() {
+	protected void populateView() {
 		final List<BudgetLine> filtered = filterBudget();
 		sortBudget(filtered);
-		TableViewRow principalRow = getPrincipalRow();
-		if (principalRow != null) {
-			tableView.appendRow(principalRow);
-		}
 		for (BudgetLine budgetLine : filtered) {
 			tableView.appendRow(createBudgetRow(budgetLine, getTotal()));
 		}
@@ -65,6 +56,10 @@ public class BudgetViewScreen extends BaseBudgetView {
 			populated = true;
 		}
 		return view;
+	}
+	
+	protected TableView getTableView() {
+		return tableView;
 	}
 
 	protected Window getWindow() {
