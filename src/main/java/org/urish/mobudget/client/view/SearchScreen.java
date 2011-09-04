@@ -28,6 +28,7 @@ public class SearchScreen extends BaseBudgetView implements SearchBarChangeHandl
 		searchWindow.setFilterAttribute("searchText");
 		searchBar = UI.createSearchBar();
 		searchBar.addChangeHandler(this);
+		searchBar.setShowCancel(false);
 		searchWindow.setSearch(searchBar);
 		view.add(searchWindow);
 	}

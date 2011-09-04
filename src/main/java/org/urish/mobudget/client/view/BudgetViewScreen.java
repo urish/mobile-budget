@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.urish.gwtit.titanium.UI;
-import org.urish.gwtit.titanium.ui.AlertDialog;
 import org.urish.gwtit.titanium.ui.TableView;
+import org.urish.gwtit.titanium.ui.TableViewRow;
 import org.urish.gwtit.titanium.ui.View;
 import org.urish.gwtit.titanium.ui.Window;
 import org.urish.gwtit.titanium.ui.events.RowClickEvent;
@@ -20,15 +20,19 @@ public class BudgetViewScreen extends BaseBudgetView {
 	private final static Logger logger = LoggerFactory.get(BudgetViewScreen.class);
 
 	private final Window view;
-	private final TableView rankList;
+	private final TableView tableView;
 	private int total;
 	private boolean populated;
 
 	public BudgetViewScreen() {
 		view = UI.createWindow();
 		view.setTitle("תקציב 2012");
-		rankList = UI.createTableView();
-		view.add(rankList);
+		tableView = UI.createTableView();
+		view.add(tableView);
+	}
+
+	protected TableViewRow getPrincipalRow() {
+		return null;
 	}
 
 	protected List<BudgetLine> filterBudget() {
@@ -44,26 +48,29 @@ public class BudgetViewScreen extends BaseBudgetView {
 		return filtered;
 	}
 
-
 	private void populateView() {
 		final List<BudgetLine> filtered = filterBudget();
 		sortBudget(filtered);
-		for (BudgetLine budgetLine : filtered) {
-			rankList.appendRow(createBudgetRow(budgetLine, getTotal()));
+		TableViewRow principalRow = getPrincipalRow();
+		if (principalRow != null) {
+			tableView.appendRow(principalRow);
 		}
+		for (BudgetLine budgetLine : filtered) {
+			tableView.appendRow(createBudgetRow(budgetLine, getTotal()));
+		}
+		final boolean hadPrincipal = principalRow != null;
 
-		rankList.addRowClickHandler(new RowClickHandler() {
+		tableView.addRowClickHandler(new RowClickHandler() {
 
 			@Override
 			public void onRowClick(RowClickEvent event) {
-				BudgetLine selectedLine = filtered.get((int)event.getIndex());
-				if (selectedLine.getCode().length() < 8) {
+				int index = (int) event.getIndex();
+				if (hadPrincipal) {
+					index--;
+				}
+				if (index >= 0) {
+					BudgetLine selectedLine = filtered.get(index);
 					MoBudget.tabGroup.getActiveTab().open(new BudgetSubScreen(selectedLine).getView());
-				} else {
-					AlertDialog alertDialog = UI.createAlertDialog();
-					alertDialog.setTitle(selectedLine.getTitle());
-					alertDialog.setMessage(String.valueOf(selectedLine.getNet_allocated()) + " אלף ש\"ח");
-					alertDialog.show();
 				}
 			}
 		});

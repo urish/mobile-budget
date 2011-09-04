@@ -32,7 +32,7 @@ public class MoBudget extends GwtTitaniumBootstrap {
 
 		Tab tab3 = UI.createTab();
 		tab3.setTitle("אודות");
-		tab3.setWindow(new AboutScreen().getView());
+		tab3.setWindow(new AboutScreen().getWindow());
 		tabGroup.addTab(tab3);
 
 		tabGroup.open();

@@ -1,0 +1,12 @@
+html {
+	background-color:white;
+	direction: rtl;
+}
+
+a {
+	color:#9090f0;
+}
+
+.clear {
+	clear: both;
+}
